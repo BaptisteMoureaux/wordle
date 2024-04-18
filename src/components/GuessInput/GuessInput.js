@@ -9,8 +9,6 @@ function GuessInput({ setGuessResults, isGameWon, guessNumber }) {
         event.preventDefault()
         setGuessResults((prevGuessResults) => [...prevGuessResults, { id: crypto.randomUUID(), guess: guessInput }])
         setGuessInput("")
-
-
       }}>
         <label htmlFor="guess-input">Enter guess:</label>
         <input disabled={isGameWon || guessNumber === NUM_OF_GUESSES_ALLOWED} id="guess-input" type="text" required pattern="\w{5}" value={guessInput} onChange={(event) => setGuessInput(event.target.value.toUpperCase())} ></input>
